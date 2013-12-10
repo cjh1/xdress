@@ -18,6 +18,7 @@ add_custom_target( ReplicatePythonSourceTree ALL ${CMAKE_COMMAND} -P
   ${CMAKE_CURRENT_BINARY_DIR}
   WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} )
 
+include_directories( ${CMAKE_CURRENT_SOURCE_DIR}/mypack )
 include_directories( ${CMAKE_CURRENT_SOURCE_DIR}/src )
 
 enable_testing()
