@@ -9,6 +9,7 @@ if( NOT NUMPY_INCLUDE_DIR )
     HINTS ${_numpy_include} )
 endif()
 include_directories( ${NUMPY_INCLUDE_DIR}  )
+include_directories( ${CMAKE_CURRENT_SOURCE_DIR} )
 
 set( cxx_pyx_files
   hoover_b.pyx
