@@ -3,8 +3,11 @@ cmake_minimum_required( VERSION 2.8 )
 project( mypack )
 
 # The files in the cmake directory must also be included in your project
-# until they are merged into upstream CMake.
-set( CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_CURRENT_LIST_DIR}/cmake )
+# until they are merged into upstream CMake. Include top level cmake
+# directory
+list(APPEND CMAKE_MODULE_PATH
+  ${CMAKE_CURRENT_LIST_DIR}/cmake
+  ${CMAKE_SOURCE_DIR}/../../cmake)
 
 include( UseCython )
 

@@ -5,8 +5,11 @@ cmake_minimum_required( VERSION 2.8.5 )
 project( cppproj )
 
 # Make the scripts available in the 'cmake' directory available for the
-# 'include()' command, 'find_package()' command.
-set( CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_CURRENT_LIST_DIR}/cmake )
+# 'include()' command, 'find_package()' command. Include top level cmake dir
+# as well
+list(APPEND CMAKE_MODULE_PATH
+    ${CMAKE_CURRENT_LIST_DIR}/cmake
+    ${CMAKE_SOURCE_DIR}/../../cmake)
 
 # give an option for whether this should be built as a CI project
 option(IS_CI "Is this project being built under continuous integration?" FALSE)
